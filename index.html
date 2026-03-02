@@ -3,78 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VHoang | Portfolio</title>
+
+    <title>Nguyen Viet Hoang | Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <h2 class="logo">Vhoang</h2>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#Facebook">Facebook</a></li>
-                <li><a href="#Intasgram">Intasgram</a></li>
-            </ul>
-        </nav>
+<header>
+    <nav class="navbar">
+        <h2 class="logo">VHoang</h2>
 
-        <div class="hero">
-            <h1>Hi, I'm <span>Nguyen Viet Hoang</span></h1>
-            <p>Frontend Developer | Student | Tech Lover</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-        <div class="social-links">
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- ICON Ở ĐẦU TRANG -->
+        <!-- <div class="nav-social">
             <a href="https://www.facebook.com/vhoangg204/" target="_blank">
-                Facebook
+                <i class="fab fa-facebook-f"></i>
             </a>
-            
             <a href="https://www.instagram.com/vhoang.204/" target="_blank">
-                Instagram
+                <i class="fab fa-instagram"></i>
             </a>
+        </div> -->
+    </nav>
+
+    <div class="hero">
+        <h1>Hi, I'm <span>Nguyen Viet Hoang</span></h1>
+        <p>Frontend Developer | IT Student | Tech Lover</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</header>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I am passionate about web development and love building modern,
+        responsive websites.
+    </p>
+</section>
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-container">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>A personal website built with HTML & CSS.</p>
         </div>
-    </header>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I am passionate about web development and love building modern, responsive websites.
-            Currently learning HTML, CSS, and JavaScript to become a professional developer.
-        </p>
-    </section>
-
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-
-        <div class="project-container">
-            <div class="card">
-                <h3>Portfolio Website</h3>
-                <p>A personal website built with HTML & CSS.</p>
-            </div>
-
-            <div class="card">
-                <h3>Landing Page</h3>
-                <p>Modern responsive landing page design.</p>
-            </div>
-
-            <div class="card">
-                <h3>Future Project</h3>
-                <p>More cool projects coming soon 🚀</p>
-            </div>
+        <div class="card">
+            <h3>Landing Page</h3>
+            <p>Modern responsive landing page design.</p>
         </div>
-    </section>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Điện thoại : 0961509077</p>
-        <p>Email : nguyenviethoangqb2004@gmail.com</p>
-        <p>GitHub : github.com/vhoang204</p>
-    </section>
+        <div class="card">
+            <h3>Future Project</h3>
+            <p>More cool projects coming soon 🚀</p>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2026 Nguyen Viet Hoang. All rights reserved.</p>
-    </footer>
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>📞 0961509077</p>
+    <p>📧 nguyenviethoangqb2004@gmail.com</p>
+
+    <!-- ICON TRONG CONTACT -->
+    <div class="contact-social">
+        <a href="https://www.facebook.com/vhoangg204/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/vhoang.204/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+       <a href="https://www.threads.net/@vhoang.204" target="_blank">
+        <i class="fa-brands fa-threads"></i>
+    </a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Nguyen Viet Hoang. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
