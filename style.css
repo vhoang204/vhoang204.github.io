@@ -163,7 +163,7 @@ body {
 
 .about-image {
     flex: 1;
-    min-width: 380px;
+    min-width: 180px;
     text-align: center;
 }
 
