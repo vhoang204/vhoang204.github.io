@@ -11,19 +11,21 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
     <nav class="navbar">
-        <h2 class="logo">VHoang</h2>
+        <div class="logo">
+            <img src="avatar.png" alt="">
+            <span>vhoang</span>
+        </div>
 
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Thông tin</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
         </ul>
 
         <!-- ICON Ở ĐẦU TRANG -->
@@ -40,16 +42,35 @@
     <div class="hero">
         <h1>Hi, I'm <span>Nguyen Viet Hoang</span></h1>
         <p>Frontend Developer | IT Student | Tech Lover</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <!-- <a href="#projects" class="btn">View My Work</a> -->
     </div>
 </header>
 
 <section id="about" class="section">
     <h2>About Me</h2>
-    <p>
-        I am passionate about web development and love building modern,
-        responsive websites.
-    </p>
+
+    <div class="about-container">
+
+        <!-- BÊN TRÁI -->
+        <div class="about-text">
+            <div class="about-text">
+        <ul>
+            <li>Họ Tên : Nguyễn Việt Hoàng</li>
+            <li>Ngày sinh : 14-07-2004</li>
+            <li>Địa chỉ : thôn Pháp Kệ, xã Quảng Bình, tỉnh Quảng Trị</li>
+            <li>Học vấn : Sinh viên năm 4 Đại học Khoa Học Huế</li>
+            <li>Ngoại ngữ : Tiếng Anh</li>
+            <li>Sở thích : Xem phim, nghe nhạc, du lịch, đọc sách</li>
+        </ul>
+</div>
+        </div>
+
+        <!-- BÊN PHẢI -->
+        <div class="about-image">
+            <img src="avatar.png" alt="My Photo">
+        </div>
+
+    </div>
 </section>
 
 <section id="projects" class="section">
@@ -73,26 +94,27 @@
 </section>
 
 <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>📞 0961509077</p>
+    <h2>Liên Hệ</h2>
+    <p>📞 +84 961509077</p>
+    <p>📞 +84 816734963</p>
     <p>📧 nguyenviethoangqb2004@gmail.com</p>
 
     <!-- ICON TRONG CONTACT -->
     <div class="contact-social">
         <a href="https://www.facebook.com/vhoangg204/" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
+            <i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/vhoang.204/" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-       <a href="https://www.threads.net/@vhoang.204" target="_blank">
-        <i class="fa-brands fa-threads"></i>
-    </a>
+            <i class="fab fa-instagram"></i></a>
+        <a href="https://www.threads.net/@vhoang.204" target="_blank">
+            <i class="fa-brands fa-threads"></i></a>
+        <a href="https://github.com/vhoang204" target="_blank">
+            <i class="fa-brands fa-github"></i></a>
+     
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Nguyen Viet Hoang. All rights reserved.</p>
+    <p>© 2026 Nguyen Viet Hoang.</p>
 </footer>
 
 </body>
