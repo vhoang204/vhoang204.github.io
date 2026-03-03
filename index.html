@@ -23,10 +23,13 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="#about">Thông tin</a></li>
-            <li><a href="#projects">Dự án</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#about">Thông tin</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
         </ul>
+        <div class="menu-toggle">
+               <i class="fas fa-bars"></i>
+        </div>
 
         <!-- ICON Ở ĐẦU TRANG -->
         <!-- <div class="nav-social">
@@ -58,7 +61,7 @@
             <li>Họ Tên : Nguyễn Việt Hoàng</li>
             <li>Ngày sinh : 14-07-2004</li>
             <li>Địa chỉ : thôn Pháp Kệ, xã Quảng Bình, tỉnh Quảng Trị</li>
-            <li>Học vấn : Sinh viên năm 4 Đại học Khoa Học Huế</li>
+            <li>Học vấn : Đại học Khoa Học Huế</li>
             <li>Ngoại ngữ : Tiếng Anh</li>
             <li>Sở thích : Xem phim, nghe nhạc, du lịch, đọc sách</li>
         </ul>
@@ -105,10 +108,14 @@
             <i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/vhoang.204/" target="_blank">
             <i class="fab fa-instagram"></i></a>
-        <a href="https://www.threads.net/@vhoang.204" target="_blank">
-            <i class="fa-brands fa-threads"></i></a>
+        <a href="https://locket.cam/vhoang.204" target="_blank">
+            <i class="fa-brands fa-locket"></i></a>
         <a href="https://github.com/vhoang204" target="_blank">
             <i class="fa-brands fa-github"></i></a>
+        <a href="https://www.threads.net/@vhoang.204" target="_blank">
+            <i class="fa-brands fa-threads"></i></a>
+        <a href="https://www.tiktok.com/@vhoang_204?is_from_webapp=1&sender_device=pc" target="_blank">
+            <i class="fa-brands fa-tiktok"></i></a>
      
     </div>
 </section>
@@ -116,6 +123,13 @@
 <footer>
     <p>© 2026 Nguyen Viet Hoang.</p>
 </footer>
+<script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
 
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

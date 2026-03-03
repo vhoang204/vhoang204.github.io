@@ -53,7 +53,7 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 15px;
 }
 
 .nav-links a {
@@ -135,7 +135,7 @@ body {
     flex: 1;
     min-width: 280px;
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
 }
 
@@ -146,7 +146,7 @@ body {
 
 .about-text li {
     position: relative;
-    padding-left: 26px;
+    padding-left: 17px;
     margin-bottom: 10px;
 }
 
@@ -163,13 +163,14 @@ body {
 
 .about-image {
     flex: 1;
+    right: 10px;
     min-width: 180px;
     text-align: center;
 }
 
 .about-image img {
     width: 260px;
-    border-radius: 20px;
+    border-radius: 25px;
     object-fit: cover;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     transition: 0.3s ease;
@@ -229,6 +230,8 @@ body {
     transform: scale(1.15);
 }
 
+            /* logo link */ 
+
 /* Facebook */
 .contact-social a:nth-child(1) {
     background: #1877f2;
@@ -242,19 +245,42 @@ body {
 }
 
 /* Threads */
-.contact-social a:nth-child(3),
+.contact-social a:nth-child(5){
+    background-color: black;
+}
+/*github*/
 .contact-social a:nth-child(4) {
     background: black;
 }
-
+/* Locket */
+.contact-social a:nth-child(3) {
+    background-color: rgb(240, 175, 9);
+    position: relative;   /* QUAN TRỌNG */
+}
+.contact-social a:nth-child(3)::after {
+    content: "\f004";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    font-size: 25px;
+    color: rgb(141, 109, 52);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-shadow: 0 0 8px rgba(255, 0, 0, 0.8); */
+}
+/* tiktok */
+.contact-social a:nth-child(6){
+    background-color: black;
+}
 /* =========================
    FOOTER
 ========================= */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background: #1e293b;
-    font-size: 14px;
+    font-size: 10px;
     opacity: 0.8;
 }
 
@@ -279,6 +305,55 @@ footer {
 
     .section {
         padding: 40px 6%;
+    }
+
+}
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #1e293b;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+@media (max-width: 780px) {
+
+    .contact-social a {
+        border-radius: 18px;
+        width: 50px;
+        height: 50px;
+        transition: 0.3s ease;
+    }
+
+    .contact-social a:active {
+        transform: scale(0.95);
     }
 
 }
