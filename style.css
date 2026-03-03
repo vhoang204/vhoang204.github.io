@@ -13,7 +13,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at 20% 30%, #1e293b, #0f172a);
+    background: #0f172a;
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
@@ -119,8 +119,9 @@ body::before {
 }
 
 .hero h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -1px;
 }
 
 .hero h1 span {
@@ -128,8 +129,8 @@ body::before {
 }
 
 .hero p {
-    font-size: 17px;
-    opacity: 0.8;
+ font-size: 18px;
+    opacity: 0.6;   
 }
 
 
@@ -150,8 +151,8 @@ body::before {
 /* Scroll animation */
 .section {
     opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
+    transform: translateY(60px);
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section.show {
@@ -177,6 +178,7 @@ body::before {
     text-align: left;
     font-size: 14px;
     line-height: 1.8;
+     padding-right: 40px;
 }
 
 .about-text ul {
@@ -207,18 +209,39 @@ body::before {
 }
 
 .about-image img {
-    width: 260px;
+    width: 300px;
     border-radius: 25px;
     object-fit: cover;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     transition: 0.3s ease;
+    
 }
 
 .about-image img:hover {
     transform: scale(1.05);
 }
 
+/* ===== DESKTOP LAYOUT ===== */
+@media (min-width: 769px) {
+    .about-container {
+        display: flex;
+        flex-direction: row;          /* Nằm ngang */
+        align-items: center;          /* Căn giữa theo chiều dọc */
+        justify-content: space-between;
+    }
 
+    .about-text {
+        flex: 1;
+        text-align: left;
+        order: 1;                     /* Text bên trái */
+    }
+
+    .about-image {
+        flex: 1;
+        text-align: right;
+        order: 2;                     /* Ảnh bên phải */
+    }
+}
 /* ==================================================
    6. SKILLS
 ================================================== */
@@ -253,10 +276,12 @@ body::before {
 }
 
 .card {
-    background: #1e293b;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
     padding: 25px;
-    border-radius: 15px;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
 }
 
 .card:hover {
