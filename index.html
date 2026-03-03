@@ -11,6 +11,8 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Link đến file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +20,8 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <img src="avatar.png" alt="">
+            <!-- Đảm bảo bạn có file avatar.png cùng thư mục -->
+            <img src="avatar.png" alt="Avatar">
             <span>vhoang</span>
         </div>
 
@@ -43,36 +46,30 @@
         <p><span id="typing"></span></p>
     </div>
 </header>
-                            <!--=====================
 
-                                        ABOUT 
-                                        
-                            =========================-->
+<!--===================== ABOUT =========================-->
 <section id="about" class="section">
     <h2>About Me</h2>
 
     <div class="about-container">
-
         <!-- BÊN TRÁI -->
         <div class="about-text">
-        <ul>
-            <li>Họ Tên : Nguyễn Việt Hoàng</li>
-            <li>Ngày sinh : 14-07-2004</li>
-            <li>Địa chỉ : thôn Pháp Kệ, xã Quảng Bình, tỉnh Quảng Trị</li>
-            <li>Học vấn : Đại học Khoa Học Huế</li>
-            <li>Ngoại ngữ : Tiếng Anh</li>
-            <li>Sở thích : Xem phim, nghe nhạc, du lịch, đọc sách</li>
-        </ul>
-</div>
+            <ul>
+                <li>Họ Tên : Nguyễn Việt Hoàng</li>
+                <li>Ngày sinh : 14-07-2004</li>
+                <li>Địa chỉ : thôn Pháp Kệ, xã Quảng Bình, tỉnh Quảng Trị</li>
+                <li>Học vấn : Đại học Khoa Học Huế</li>
+                <li>Ngoại ngữ : Tiếng Anh</li>
+                <li>Sở thích : Xem phim, nghe nhạc, du lịch, đọc sách</li>
+            </ul>
         </div>
-
         <!-- BÊN PHẢI -->
         <div class="about-image">
             <img src="avatar.png" alt="My Photo">
         </div>
-
     </div>
 </section>
+
 <section class="section">
     <h2>Skills</h2>
 
@@ -91,9 +88,8 @@
         <div class="skill-bar"><div style="width: 75%"></div></div>
     </div>
 </section>
-                <!--==============
-                        PROJECT
-                    ==============-->
+
+<!--============== PROJECT ==============-->
 <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="project-container">
@@ -133,53 +129,52 @@
             <i class="fa-brands fa-threads"></i></a>
         <a href="https://www.tiktok.com/@vhoang_204?is_from_webapp=1&sender_device=pc" target="_blank">
             <i class="fa-brands fa-tiktok"></i></a>
-     
     </div>
 </section>
 
 <footer>
     <p>© 2026 Nguyen Viet Hoang.</p>
 </footer>
-                                <!--==============
 
-                                        JAVASCRIPT
-
-                                    ==============-->          
+<!--==============================
+        JAVASCRIPT
+    ==============================-->          
 <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     const themeBtn = document.querySelector('.theme-toggle');
+    
     toggle.addEventListener('click', () => {
         nav.classList.toggle('active');
-});
-    themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
+    });
 
-    if(document.body.classList.contains('light-mode')){
-        themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-});
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+
+        if(document.body.classList.contains('light-mode')){
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    });
+
     const sections = document.querySelectorAll('.section');
 
     window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add('show');
-        }
+        sections.forEach(sec => {
+            const top = sec.getBoundingClientRect().top;
+            if(top < window.innerHeight - 100){
+                sec.classList.add('show');
+            }
+        });
     });
-});
 
-
-
-const roles = [
-    "BackEnd Developer",
-    "IT Student",
-    "Tech Lover",
-    "Future Software Engineer"
-];
+    const roles = [
+        "BackEnd Developer",
+        "IT Student",
+        "Tech Lover",
+        "Future Software Engineer"
+    ];
 
     let i = 0;
     let j = 0;
@@ -189,7 +184,6 @@ const roles = [
 
     function typeEffect() {
         if (i >= roles.length) i = 0;
-
         currentText = roles[i];
 
         if (!isDeleting) {
@@ -211,15 +205,25 @@ const roles = [
     }
 
     typeEffect();
+
     const cursor = document.querySelector(".custom-cursor");
 
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
+    document.addEventListener("mousemove", (e) => {
+        if(cursor) {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        }
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+    });
 </script>
 
-
+<!-- Div con chuột tùy chỉnh (Đã sửa vị trí vào trong body) -->
 <div class="custom-cursor"></div>
+
 </body>
 </html>
