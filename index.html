@@ -12,11 +12,29 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<header>
+</head>
+    
+    <body>
+    <header class="mobile-header">
+        <div class="logo">
+            <img src="avatar.jpg" alt="Avatar">
+            <span>vhoang</span>
+        </div>
+        <nav>
+            <a href="#about">Thông tin</a>
+            <a href="#projects">Dự án</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+        <button id="darkModeToggle">🌙</button>
+    </header>    
+    
+    <header class="desktop-header">
     <nav class="navbar">
+        <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+        </div>
         <div class="logo">
             <img src="avatar.png" alt="">
             <span>vhoang</span>
@@ -56,12 +74,12 @@
         <!-- BÊN TRÁI -->
         <div class="about-text">
             <ul>
-                <li>Họ Tên : Nguyễn Việt Hoàng</li>
-                <li>Ngày sinh : 14-07-2004</li>
-                <li>Địa chỉ : thôn Pháp Kệ, xã Quảng Bình, tỉnh Quảng Trị</li>
-                <li>Học vấn : Đại học Khoa Học Huế</li>
-                <li>Ngoại ngữ : Tiếng Anh</li>
-                <li>Sở thích : Xem phim, nghe nhạc, du lịch, đọc sách</li>
+                <li><strong>Họ Tên :</strong> Nguyễn Việt Hoàng</li>
+                <li><strong>Ngày sinh :</strong> 14-07-2004</li>
+                <li><strong>Quê quán :</strong> Xã Quảng Bình , tỉnh Quảng Trị</li>
+                <li><strong>Học vấn :</strong> Đại học Khoa Học Huế</li>
+                <li><strong>Ngoại ngữ :</strong> Tiếng Anh</li>
+                <li><strong>Sở thích :</strong> Xem phim, nghe nhạc, du lịch, đọc sách</li>
             </ul>
         </div>
 
@@ -95,30 +113,49 @@
     <div class="skill-bar"><div style="width: 50%"></div></div>
     </div>
 </section>
-                <!--==============
-                        PROJECT
-                    ==============-->
+<!--==============
+        PROJECT
+    ==============-->
 <section id="projects" class="section">
-    <h2>Projects</h2>
+    <h2>PROJECT</h2>
+
     <div class="project-container">
+
+        <!-- PROJECT 1 -->
         <div class="card">
-            <h3>Website</h3>
-            <p>Developed a fullstack e-commerce website using React, NodeJS and MongoDB. Implemented JWT authentication, role-based authorization and RESTful APIs. Deployed on Render.</p>
-        </div>
-        <div class="card">
-            <h3>Landing Page</h3>
-            <p>Modern responsive landing page design.</p>
+            <h3>Hệ Thống Quản Lý Sinh Viên</h3>
+            <p>
+                Ứng dụng web fullstack dùng để quản lý sinh viên, lớp học và điểm số.
+                Xây dựng bằng NodeJS, Express và MongoDB.
+                Tích hợp xác thực JWT, phân quyền người dùng và xây dựng API theo chuẩn RESTful.
+            </p>
         </div>
 
+        <!-- PROJECT 2 -->
         <div class="card">
-            <h3>Future Project</h3>
-            <p>More cool projects coming soon 🚀</p>
+            <h3>Website Bán Hàng</h3>
+            <p>
+                Website thương mại điện tử với giao diện hiện đại.
+                Sử dụng React, NodeJS và MongoDB.
+                Có chức năng đăng nhập, giỏ hàng, quản lý sản phẩm và trang quản trị.
+                Triển khai trên Render.
+            </p>
         </div>
+
+        <!-- PROJECT 3 -->
+        <div class="card">
+            <h3>Ứng Dụng Quản Lý Công Việc</h3>
+            <p>
+                Ứng dụng quản lý công việc cá nhân với giao diện responsive.
+                Cho phép thêm, chỉnh sửa và xoá công việc.
+                Xây dựng bằng HTML, CSS và JavaScript.
+            </p>
+        </div>
+
     </div>
 </section>
-
 <section id="contact" class="section">
-    <h2>Liên Hệ</h2>
+    <h2>CONTACT</h2>
     <p>📞 +84 961509077</p>
     <p>📞 +84 816734963</p>
     <p>📧 nguyenviethoangqb2004@gmail.com</p>
@@ -152,38 +189,60 @@
 <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
-    const themeBtn = document.querySelector('.theme-toggle');
-    toggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-});
-    themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
 
-    if(document.body.classList.contains('light-mode')){
-        themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
     }
-});
+
+    // ===== DARK MODE FIX =====
+    const desktopThemeBtn = document.querySelector('.theme-toggle');
+    const mobileThemeBtn = document.getElementById('darkModeToggle');
+
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+
+        const isLight = document.body.classList.contains('light-mode');
+
+        if (desktopThemeBtn) {
+            desktopThemeBtn.innerHTML = isLight
+                ? '<i class="fas fa-sun"></i>'
+                : '<i class="fas fa-moon"></i>';
+        }
+
+        if (mobileThemeBtn) {
+            mobileThemeBtn.textContent = isLight ? '☀️' : '🌙';
+        }
+    }
+
+    if (desktopThemeBtn) {
+        desktopThemeBtn.addEventListener('click', toggleTheme);
+    }
+
+    if (mobileThemeBtn) {
+        mobileThemeBtn.addEventListener('click', toggleTheme);
+    }
+
+    // ===== Scroll animation =====
     const sections = document.querySelectorAll('.section');
 
     window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add('show');
-        }
+        sections.forEach(sec => {
+            const top = sec.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                sec.classList.add('show');
+            }
+        });
     });
-});
 
-
-
-const roles = [
-    "BackEnd Developer",
-    "IT Student",
-    "Tech Lover",
-    "Future Software Engineer"
-];
+    // ===== Typing effect =====
+    const roles = [
+        "BackEnd Developer",
+        "IT Student",
+        "Tech Lover",
+        "Future Software Engineer"
+    ];
 
     let i = 0;
     let j = 0;
@@ -192,8 +251,9 @@ const roles = [
     const typingEl = document.getElementById("typing");
 
     function typeEffect() {
-        if (i >= roles.length) i = 0;
+        if (!typingEl) return;
 
+        if (i >= roles.length) i = 0;
         currentText = roles[i];
 
         if (!isDeleting) {
@@ -215,20 +275,24 @@ const roles = [
     }
 
     typeEffect();
+
+    // ===== Custom cursor =====
     const cursor = document.querySelector(".custom-cursor");
 
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
+    if (cursor) {
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        });
+    }
+
+    // ===== Auto close menu on click =====
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav) nav.classList.remove('active');
+        });
     });
-});
 </script>
-
-
 <div class="custom-cursor"></div>
 </body>
 </html>
