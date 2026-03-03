@@ -16,6 +16,9 @@
 <body>
 
 <header>
+    <div class="theme-toggle">
+    <i class="fas fa-moon"></i>
+    </div>
     <nav class="navbar">
         <div class="logo">
             <img src="avatar.png" alt="">
@@ -30,21 +33,11 @@
         <div class="menu-toggle">
                <i class="fas fa-bars"></i>
         </div>
-
-        <!-- ICON Ở ĐẦU TRANG -->
-        <!-- <div class="nav-social">
-            <a href="https://www.facebook.com/vhoangg204/" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/vhoang.204/" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div> -->
     </nav>
 
     <div class="hero">
         <h1>Hi, I'm <span>Nguyen Viet Hoang</span></h1>
-        <p>Frontend Developer | IT Student | Tech Lover</p>
+        <p><span id="typing"></span></p>
         <!-- <a href="#projects" class="btn">View My Work</a> -->
     </div>
 </header>
@@ -75,15 +68,34 @@
 
     </div>
 </section>
+<section class="section">
+    <h2>Skills</h2>
 
+    <div class="skill">
+        <p>HTML / CSS</p>
+        <div class="skill-bar"><div style="width: 90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="skill-bar"><div style="width: 80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>NodeJS</p>
+        <div class="skill-bar"><div style="width: 75%"></div></div>
+    </div>
+</section>
+                <!--==============
+                        PROJECT
+                    ==============-->
 <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="project-container">
         <div class="card">
-            <h3>Portfolio Website</h3>
-            <p>A personal website built with HTML & CSS.</p>
+            <h3>Website</h3>
+            <p>Developed a fullstack e-commerce website using React, NodeJS and MongoDB. Implemented JWT authentication, role-based authorization and RESTful APIs. Deployed on Render.</p>
         </div>
-
         <div class="card">
             <h3>Landing Page</h3>
             <p>Modern responsive landing page design.</p>
@@ -123,13 +135,86 @@
 <footer>
     <p>© 2026 Nguyen Viet Hoang.</p>
 </footer>
+                                <!--==============
+
+                                        SCRIPT
+
+                                    ==============-->          
 <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
-
+    const themeBtn = document.querySelector('.theme-toggle');
     toggle.addEventListener('click', () => {
         nav.classList.toggle('active');
+});
+    themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+
+    if(document.body.classList.contains('light-mode')){
+        themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+});
+    const sections = document.querySelectorAll('.section');
+
+    window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add('show');
+        }
     });
+});
+
+
+
+const roles = [
+    "BackEnd Developer",
+    "IT Student",
+    "Tech Lover",
+    "Future Software Engineer"
+];
+
+    let i = 0;
+    let j = 0;
+    let currentText = "";
+    let isDeleting = false;
+    const typingEl = document.getElementById("typing");
+
+    function typeEffect() {
+        if (i >= roles.length) i = 0;
+
+        currentText = roles[i];
+
+        if (!isDeleting) {
+            typingEl.textContent = currentText.slice(0, j++);
+            if (j > currentText.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1200);
+                return;
+            }
+        } else {
+            typingEl.textContent = currentText.slice(0, j--);
+            if (j === 0) {
+                isDeleting = false;
+                i++;
+            }
+        }
+
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+
+    typeEffect();
+    const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
 </script>
+
+
+<div class="custom-cursor"></div>
 </body>
 </html>
