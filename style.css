@@ -19,7 +19,7 @@ body {
 }
 
 /* =========================
-   NAVBAR
+             menu
 ========================= */
 .navbar {
     display: flex;
@@ -88,7 +88,7 @@ body {
 ========================= */
 .hero {
     text-align: center;
-    padding: 100px 20px;
+    padding: 40px 20px 20px;
 }
 
 .hero h1 {
@@ -109,13 +109,13 @@ body {
    SECTION
 ========================= */
 .section {
-    padding: 50px 10%;
+    padding: 30px 10%;
     text-align: center;
 }
 
 .section h2 {
     font-size: 26px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #38bdf8;
 }
 
@@ -308,6 +308,18 @@ footer {
     }
 
 }
+
+
+
+
+
+/* ========================= mobile ===============*/
+
+
+
+
+
+
 /* =========================
    MOBILE MENU
 ========================= */
@@ -326,6 +338,12 @@ footer {
         display: block;
     }
 
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .nav-links {
         position: absolute;
         top: 70px;
@@ -341,19 +359,6 @@ footer {
 
     .nav-links.active {
         display: flex;
-    }
-}
-@media (max-width: 780px) {
-
-    .contact-social a {
-        border-radius: 18px;
-        width: 50px;
-        height: 50px;
-        transition: 0.3s ease;
-    }
-
-    .contact-social a:active {
-        transform: scale(0.95);
     }
 
 }
