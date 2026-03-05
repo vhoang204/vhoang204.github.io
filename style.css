@@ -273,8 +273,23 @@ body::before {
     border-radius: 5px;
     transition: width 1.5s ease;
 }
-.skill-image img {
-    border-radius: 50px;
+.certificate-card{
+    text-align: center;
+    padding: 40px;
+}
+
+.certificate-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.certificate-image img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
 }
 
 
