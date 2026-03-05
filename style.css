@@ -287,9 +287,11 @@ body::before {
 
 .certificate-image img{
     width: 100%;
-    max-width: 500px;
+    max-width: 350px;
     height: auto;
     border-radius: 10px;
+    display:flex;
+    justify-content:center;
 }
 
 
@@ -515,4 +517,17 @@ body.light-mode footer {
     body {
         padding-top: 70px;
     }
+}
+
+    /* DESKTOP */
+@media (min-width: 1024px){
+
+.certificate-card{
+    padding: 60px;
+}
+
+.certificate-img img{
+    max-width: 900px;
+}
+
 }
