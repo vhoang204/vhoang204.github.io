@@ -261,12 +261,20 @@ body::before {
     border-radius: 5px;
     overflow: hidden;
 }
-
+#skills {
+    display: flex;
+    flex-direction: column; /* Xếp các card theo chiều dọc */
+    gap: 20px;              /* Đây là khoảng cách giữa các card, bạn có thể tăng lên 50px hoặc hơn */
+    padding: 60px 10%;      /* Căn chỉnh lại khoảng cách lề cho đẹp */
+}
 .skill-bar div {
     height: 100%;
     background: #38bdf8;
     border-radius: 5px;
     transition: width 1.5s ease;
+}
+.skill-image img {
+    border-radius: 50px;
 }
 
 
