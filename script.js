@@ -22,7 +22,7 @@ function applyTheme(t) {
   themeIco.className = t === "dark" ? "fas fa-moon" : "fas fa-sun";
 }
 
-applyTheme(localStorage.getItem("nvh-theme") || "dark");
+applyTheme(localStorage.getItem("nvh-theme") || "light");
 
 themeBtn.addEventListener("click", () => {
   applyTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
