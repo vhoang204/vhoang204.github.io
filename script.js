@@ -122,36 +122,96 @@ function updateActive() {
 }
 
 window.addEventListener("scroll", updateActive, { passive: true });
+/* =========================================
+   FORM SUBMIT AJAX
+========================================= */
 
+const contactForm = document.getElementById("contactForm");
+const formMsg = document.getElementById("formMsg");
+const sendBtn = document.getElementById("sendBtn");
+const btnText = document.getElementById("btnText");
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(contactForm);
+
+  // loading state
+  sendBtn.disabled = true;
+  btnText.innerHTML = "Đang gửi...";
+  sendBtn.style.opacity = ".7";
+
+  formMsg.textContent = "";
+  
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (response.ok) {
+
+      formMsg.style.color = "var(--accent)";
+      formMsg.innerHTML = "✅ Tin nhắn đã gửi thành công!";
+
+      contactForm.reset();
+
+    } else {
+
+      formMsg.style.color = "#e07050";
+      formMsg.innerHTML = "❌ Có lỗi xảy ra. Vui lòng thử lại.";
+
+    }
+
+  } catch (error) {
+
+    formMsg.style.color = "#e07050";
+    formMsg.innerHTML = "❌ Không thể kết nối máy chủ.";
+
+  }
+
+  // restore button
+  sendBtn.disabled = false;
+  btnText.innerHTML = "Gửi tin nhắn";
+  sendBtn.style.opacity = "1";
+
+  setTimeout(() => {
+    formMsg.textContent = "";
+  }, 5000);
+
+});
 /* =========================================
    CONTACT FORM
 ========================================= */
-document.getElementById("sendBtn").addEventListener("click", () => {
-  const name  = document.getElementById("fName").value.trim();
-  const email = document.getElementById("fEmail").value.trim();
-  const msg   = document.getElementById("fMsg").value.trim();
-  const out   = document.getElementById("formMsg");
+// document.getElementById("sendBtn").addEventListener("click", () => {
+//   const name  = document.getElementById("fName").value.trim();
+//   const email = document.getElementById("fEmail").value.trim();
+//   const msg   = document.getElementById("fMsg").value.trim();
+//   const out   = document.getElementById("formMsg");
 
-  if (!name || !email || !msg) {
-    out.style.color = "#e07050";
-    out.textContent = "Vui lòng điền đầy đủ họ tên, email và tin nhắn.";
-    return;
-  }
+//   if (!name || !email || !msg) {
+//     out.style.color = "#e07050";
+//     out.textContent = "Vui lòng điền đầy đủ họ tên, email và tin nhắn.";
+//     return;
+//   }
 
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!re.test(email)) {
-    out.style.color = "#e07050";
-    out.textContent = "Địa chỉ email chưa hợp lệ.";
-    return;
-  }
+//   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   if (!re.test(email)) {
+//     out.style.color = "#e07050";
+//     out.textContent = "Địa chỉ email chưa hợp lệ.";
+//     return;
+//   }
 
-  out.style.color = "var(--accent)";
-  out.textContent = `Cảm ơn ${name}! Mình sẽ phản hồi sớm nhất có thể. 🙏`;
+//   out.style.color = "var(--accent)";
+//   out.textContent = `Cảm ơn ${name}! Mình sẽ phản hồi sớm nhất có thể. 🙏`;
 
-  document.getElementById("fName").value    = "";
-  document.getElementById("fEmail").value   = "";
-  document.getElementById("fSubject").value = "";
-  document.getElementById("fMsg").value     = "";
+//   document.getElementById("fName").value    = "";
+//   document.getElementById("fEmail").value   = "";
+//   document.getElementById("fSubject").value = "";
+//   document.getElementById("fMsg").value     = "";
 
-  setTimeout(() => { out.textContent = ""; }, 5000);
-});
+//   setTimeout(() => { out.textContent = ""; }, 5000);
+// });

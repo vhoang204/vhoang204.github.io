@@ -473,37 +473,67 @@
       </div>
 
       <!-- Right: Form -->
-      <div class="c-form reveal d1">
-        <div class="f-row">
-          <div class="f-group">
-            <label for="fName">Họ tên</label>
-            <input type="text" id="fName" placeholder="Tên của bạn">
-          </div>
-          <div class="f-group">
-            <label for="fEmail">Email</label>
-            <input type="email" id="fEmail" placeholder="email@example.com">
-          </div>
-        </div>
+  <form 
+  action="https://formspree.io/f/xwvzbddb"
+  method="POST"
+  class="c-form reveal d1"
+  id="contactForm"
+>
 
-        <div class="f-group">
-          <label for="fSubject">Chủ đề</label>
-          <input type="text" id="fSubject" placeholder="Bạn muốn nói về điều gì?">
-        </div>
-
-        <div class="f-group">
-          <label for="fMsg">Tin nhắn</label>
-          <textarea id="fMsg" placeholder="Nội dung tin nhắn..."></textarea>
-        </div>
-
-        <button class="f-btn" id="sendBtn">
-          <i class="fas fa-paper-plane"></i>
-          Gửi tin nhắn
-        </button>
-
-        <div class="f-msg" id="formMsg"></div>
-      </div>
-
+  <div class="f-row">
+    <div class="f-group">
+      <label for="fName">Họ tên</label>
+      <input 
+        type="text"
+        id="fName"
+        name="name"
+        placeholder="Tên của bạn"
+        required
+      >
     </div>
+
+    <div class="f-group">
+      <label for="fEmail">Email</label>
+      <input 
+        type="email"
+        id="fEmail"
+        name="email"
+        placeholder="email@example.com"
+        required
+      >
+    </div>
+  </div>
+
+  <div class="f-group">
+    <label for="fSubject">Chủ đề</label>
+    <input 
+      type="text"
+      id="fSubject"
+      name="subject"
+      placeholder="Bạn muốn nói về điều gì?"
+    >
+  </div>
+
+  <div class="f-group">
+    <label for="fMsg">Tin nhắn</label>
+    <textarea
+      id="fMsg"
+      name="message"
+      placeholder="Nội dung tin nhắn..."
+      required
+    ></textarea>
+  </div>
+
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit" class="f-btn" id="sendBtn">
+    <i class="fas fa-paper-plane"></i>
+    <span id="btnText">Gửi tin nhắn</span>
+  </button>
+
+  <div class="f-msg" id="formMsg"></div>
+
+</form>
   </div>
 </section>
 
@@ -511,7 +541,7 @@
 <footer>
   <div class="wrap">
     <p class="fc">© 2026 <span>Nguyễn Việt Hoàng</span>. All rights reserved.</p>
-    <p class="fl">Made with <span>♥</span> in Huế</p>
+    <p class="fl">Made with <span>♥</span> in Hue</p>
   </div>
 </footer>
 
